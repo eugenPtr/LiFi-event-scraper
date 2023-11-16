@@ -1,0 +1,19 @@
+version: '0.1'
+
+services:
+  scraper:
+    build:
+      context: ./scraper
+      dockerfile: Dockerfile
+    environment:
+      MONGO_URI: ${MONGO_URI}
+      POLYGON_PROVIDER_URI: ${POLYGON_PROVIDER_URI}
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    environment:
+      MONGO_URI: "${MONGO_URI}"
+    ports:
+      - "3000:3000"

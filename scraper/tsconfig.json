@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist", // where to put the compiled JS files
+    "sourceMap": true,
+    "target": "es2017", // which level of JS support to target
+    "module": "esnext", 
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": true, 
+  },
+  "include": ["src"], // which files to compile
+  "exclude": ["node_modules"], // which files to skip
+}
