@@ -5,9 +5,9 @@ import { FeeCollectedEvent } from './schemas/feeCollectedEvent.schema'
 
 @Injectable()
 export class AppService {
-  constructor(@InjectModel(FeeCollectedEvent.name) private catModel: Model<FeeCollectedEvent>) {}
+  constructor(@InjectModel(FeeCollectedEvent.name) private feeCollectedEventModel: Model<FeeCollectedEvent>) {}
   
-  async findAllFeeCollectedEvents(): Promise<FeeCollectedEvent[]> {
-    return this.catModel.find().exec()
+  async findAllFeeCollectedEvents(integratorAddress: string): Promise<FeeCollectedEvent[]> {
+    return this.feeCollectedEventModel.find({ integrator: integratorAddress }).exec()
   }
 }

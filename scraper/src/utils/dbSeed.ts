@@ -16,10 +16,11 @@ try {
 
     if (chains.length == 0) {
         const result = await ChainModel.insertMany([
+            // Add in here other chains you want to fetch events from
             {
                 name: 'Polygon',
                 chainId: '137',
-                contractAddress: '0xbD6C7B0d2f68c2b7805d88388319cfB6EcB50eA9',
+                contractAddress: '0xbD6C7B0d2f68c2b7805d88388319cfB6EcB50eA9', // FeeCollector address
                 providerUri: process.env.POLYGON_PROVIDER_URI,
                 latestBlockScraped: 47961368
             }

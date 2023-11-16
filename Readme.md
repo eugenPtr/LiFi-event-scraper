@@ -2,7 +2,7 @@
 
 This project is composed of two modules
 - `scraper` - a cron job that fetches FeeCollected events from Lifi's contracts deployed on various chains, and then stores them in a Mongo database
-- `api` - an API used to retrieve the data stored in the Mongo db
+- `api` - an API with a REST endpoint to retrieve all FeeCollected events for a given `integrator`
 
 ## Setting up
 

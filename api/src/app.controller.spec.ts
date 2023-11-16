@@ -14,9 +14,12 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController)
   })
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getFeeCollectedEvents()).toHaveBeenCalled()
+  describe('getFeeCollectedEvents', () => {
+    it('should call getFeeCollectedEvents with arbitrary value', () => {
+      const mockIntegratorAddress = 'arbitrary_value'
+      const spy = jest.spyOn(appController, 'getFeeCollectedEvents')
+      appController.getFeeCollectedEvents(mockIntegratorAddress)
+      expect(spy).toHaveBeenCalledWith(mockIntegratorAddress)
     })
   })
 })
